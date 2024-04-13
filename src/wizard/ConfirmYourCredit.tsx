@@ -3,7 +3,7 @@ import React from "react";
 import CustomButton from "../components/CustomButton";
 import CustomText from "../components/CustomText";
 
-export default function ConfirmYourCredit({ setShow }: any) {
+export default function ConfirmYourCredit({ selectedCredit }: any) {
   return (
     <>
       <CustomText fontSize="header">Acepta tu crédito</CustomText>
@@ -14,7 +14,12 @@ export default function ConfirmYourCredit({ setShow }: any) {
         Crédito seleccionado
       </CustomText>
 
-      <CustomButton title="Contratar" onPress={() => setShow(true)} />
+      <CustomButton
+        title={`Crédito ${selectedCredit.id}  $${selectedCredit.amount}`}
+        onPress={() => {}}
+      />
+
+      <CustomButton title="Contratar" onPress={() => console.log("Success")} />
     </>
   );
 }
