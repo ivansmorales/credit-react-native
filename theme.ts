@@ -1,9 +1,10 @@
 const theme = {
   colors: {
-    black: '#000',
-    white: '#fff',
-    grey: '#767676',
-    btnPrimary: '#2D63EC',
+    black: "#000",
+    white: "#fff",
+    grey: "#767676",
+    mediumGrey: "#A9A9A9",
+    btnPrimary: "#2D63EC",
   },
   fontSizes: {
     small: 14,
@@ -11,12 +12,12 @@ const theme = {
     large: 20,
   },
   fonts: {
-    main: "Poppins",
+    main: "System",
   },
- fontWeights: {
-    normal: "400",
-    bold: "700",
+  fontWeights: {
+    normal: '400',
+    bold: '700'
   },
-}
+};
 
 export default theme;
