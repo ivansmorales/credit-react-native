@@ -1,17 +1,21 @@
 import React from "react";
-import { StyleSheet, TextInput } from "react-native";
+import { StyleSheet, TextInput, TextInputProps } from "react-native";
 import theme from "../../theme";
 
 type CustomTextInputProps = {
-  placeholder: string;
-};
+  error?: string;
+} & TextInputProps;
 
-export default function CustomTextInput({ placeholder }: CustomTextInputProps) {
+export default function CustomTextInput({
+  error,
+  ...restOfProps
+}: CustomTextInputProps) {
+  const inputStyle: any = [styles.input, error && styles.error];
   return (
     <TextInput
-      style={styles.input}
-      placeholder={placeholder}
+      style={inputStyle}
       placeholderTextColor={theme.colors.mediumGrey}
+      {...restOfProps}
     />
   );
 }
@@ -19,9 +23,11 @@ export default function CustomTextInput({ placeholder }: CustomTextInputProps) {
 const styles = StyleSheet.create({
   input: {
     height: 50,
-    marginBottom: 10,
     borderWidth: 1,
     borderColor: theme.colors.grey,
     padding: 10,
+  },
+  error: {
+    borderColor: theme.colors.red,
   },
 });

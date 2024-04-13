@@ -21,6 +21,7 @@ export default function CustomText({
     styles.text,
     variant === "primary" && styles.black,
     variant === "secondary" && styles.grey,
+    variant === "error" && styles.red,
     fontSize === "large" && styles.header,
     fontSize === "small" && styles.paragraph,
   ];
@@ -43,6 +44,9 @@ const styles = StyleSheet.create({
   },
   black: {
     color: theme.colors.black,
+  },
+  red: {
+    color: theme.colors.red,
   },
   header: {
     fontSize: theme.fontSizes.large,

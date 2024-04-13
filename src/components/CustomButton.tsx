@@ -7,16 +7,20 @@ type CustomButtonProps = {
   title: string;
   onPress: () => void;
   disabled?: boolean;
+  style?: ViewStyle;
 };
 
 export default function CustomButton({
   title,
   onPress,
   disabled = false,
+  style,
 }: CustomButtonProps) {
+  const buttonStyles = [styles.button, disabled && styles.disabled, style];
+
   return (
     <TouchableOpacity
-      style={disabled ? styles.disabled : styles.button}
+      style={buttonStyles}
       onPress={onPress}
       disabled={disabled}
     >
@@ -29,6 +33,7 @@ const baseButtonStyle: ViewStyle = {
   borderRadius: 5,
   alignItems: "center",
   padding: 10,
+  marginTop: 20,
 };
 
 const styles = StyleSheet.create({

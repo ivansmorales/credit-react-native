@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { View } from "react-native";
+
 import Constants from "expo-constants";
+
 import GetYourCredit from "./wizard/GetYourCredit";
 import CongratsModal from "./wizard/CongratsModal";
 import ConfirmYourCredit from "./wizard/ConfirmYourCredit";
